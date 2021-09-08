@@ -1,0 +1,51 @@
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-grid;
+  background-color: honeydew;
+  place-items: center;
+  grid-gap: 0;
+  animation: none;
+}
+
+.grid.animate {
+  animation: 0.5s ease-in-out 0s 2 alternate none running gridexpand;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.popup.active {
+  display: block;
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  transform: translate(50vw, 50vh);
+}
+
+
+
+
+@keyframes gridexpand {
+  from {
+    grid-gap: 0;
+  }
+
+  to {
+    grid-gap: 6px;
+  } 
+}

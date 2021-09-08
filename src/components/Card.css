@@ -1,0 +1,55 @@
+.project-card {
+  display: flex;
+  outline: none;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-self: stretch stretch;
+  background-color: rgb(255, 255, 255, 0.6);
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.project-card:hover, .project-card:focus {
+  transform: translateX(-6px) translateY(-6px);
+  box-shadow: 6px 6px 6px #aaa;
+}
+
+.project-card.focused {
+  border-width: 3px;
+  border-color: mediumblue;
+  transform: translateX(-6px) translateY(-6px);
+  box-shadow: 6px 6px 6px #aaa;
+}
+
+
+.card-image {
+  box-sizing: border-box;
+  margin: 5px;
+  height: 82%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.card-label {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  height: 18%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid black;
+  border-radius: 0 0 9px 9px;
+  background-color:gainsboro;
+}
+

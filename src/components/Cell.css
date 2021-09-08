@@ -1,0 +1,46 @@
+.cell-default {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: gainsboro;
+  background-color: beige;
+}
+
+.cell-default.active-0 {
+  background-color: #FBF35E;
+}
+
+.cell-default.active-1 {
+  background-color: #F6F5BD;
+}
+
+.cell-banner {
+  margin: 0;
+  padding: 0;
+  will-change: opacity;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: darkslategray;
+  background-color: black;
+}
+
+.cell-banner.active-0 {
+  background-color: black;
+}
+
+.cell-banner.active-1 {
+  background-color: black;
+}
+
+
+
+@keyframes fadein {
+  from {
+    opacity: 50%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}

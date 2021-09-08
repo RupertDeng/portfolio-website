@@ -1,0 +1,138 @@
+.nav-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #25465f;
+  border-radius: 10px;
+  border-bottom: 0;
+}
+
+.nav-container.expand {
+  border-bottom: 2px solid lightgray;
+}
+
+.brand-container {
+  display: flex;
+  height: 80%;
+  width: 40%;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  margin-left: 2%;
+  border-width: 0;
+}
+
+.app-logo {
+  height: 100%;
+}
+
+.app-name {
+  display: flex;
+  height: 100%;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.menu-container {
+  display: flex;
+  height: 60%;
+  width: 39%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  margin-right: 2%;
+  border-width: 0;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 0.95rem;
+  width: 42%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.about-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 0.95rem;
+  width: 42%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-left: 2%;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.project-nav:focus, .project-nav:hover {
+  background-color: white;
+  color: black;
+}
+
+.about-nav:focus, .about-nav:hover {
+  background-color: white;
+  color: black;
+}
+
+.project-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  box-sizing: border-box;
+  top: 110%;
+  right: 0;
+  z-index: 998;
+  background-color:white;
+  border: 1px dashed black;
+  margin: 0;
+  padding: 0;
+}
+
+.project-menu.active {
+  display: flex;
+}
+
+.project-item {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: black;
+  border: none;
+  background-color: transparent;
+  text-underline-offset: 0.15rem; 
+}
+
+
+.project-item:hover {
+  background-color: #333333 ;
+  color: white;
+}

@@ -1,0 +1,51 @@
+.about-container {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 30px 20px 30px;
+  gap: 20px;
+}
+
+.picture-self {
+  width: 142px;
+}
+
+.text-container {
+  background-color: transparent;
+}
+
+.self-intro {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  text-underline-offset: 3px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-icon {
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  color: black;
+}
+
+.contact-icon:focus, .contact-icon:hover {
+  border: 1px dashed black;
+}
+
+
