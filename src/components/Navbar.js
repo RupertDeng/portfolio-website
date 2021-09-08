@@ -48,12 +48,12 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
     <nav className={pjtClick ? 'nav-container expand' : 'nav-container'} style={navLayout}>
       <div className='brand-container'>
         <img className='app-logo' src={appLogo} alt='logo-sketch' 
-        onKeyPress={e => {if (e.key==='Enter') handleLogoClick()}} onClick={handleLogoClick} tabIndex='0'>
+        onKeyPress={e => {if (e.key==='Enter') handleLogoClick()}} onClick={handleLogoClick}>
         </img>
         <p className='app-name'>Ruopeng's <br></br> Code Journal</p>
       </div>
       <div className='menu-container'>
-        <button className='project-nav' onClick={()=>setPjtClick(!pjtClick)} onBlur={()=>setPjtClick(false)}>Project</button>
+        <button className={pjtClick ? 'project-nav opened' : 'project-nav'} onClick={()=>setPjtClick(!pjtClick)}>Project</button>
         <button className='about-nav' onClick={handleAboutClick}>About</button>
         <ul className={pjtClick ? 'project-menu active' : 'project-menu'} style={menuWidth}>
           {createProjectMenuList(projectList)}

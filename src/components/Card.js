@@ -13,7 +13,7 @@ export const Card = React.memo(({cardRow, cardCol, cardWidth, cardHeight, cardId
 
 
   return (
-    <div id={cardId} className='project-card' style={cardLayout} onClick={handleCardClick} tabIndex='0'>
+    <div id={cardId} className='project-card' style={cardLayout} onClick={handleCardClick}>
       <div className='card-image' style={{backgroundImage: `url(${cardImage})`}}></div>
       <p className='card-label'>
         <b>{cardLabel}</b>

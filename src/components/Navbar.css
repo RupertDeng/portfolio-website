@@ -31,6 +31,7 @@
 
 .app-logo {
   height: 100%;
+  outline: none;
 }
 
 .app-name {
@@ -87,12 +88,7 @@
   transition: background-color 0.2s, color 0.2s;
 }
 
-.project-nav:focus, .project-nav:hover {
-  background-color: white;
-  color: black;
-}
-
-.about-nav:focus, .about-nav:hover {
+.project-nav.opened {
   background-color: white;
   color: black;
 }
@@ -132,7 +128,19 @@
 }
 
 
-.project-item:hover {
-  background-color: #333333 ;
-  color: white;
+@media (hover: hover) and (pointer: fine) {
+  .project-nav:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .about-nav:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .project-item:hover {
+    background-color: #333333 ;
+    color: white;
+  }
 }

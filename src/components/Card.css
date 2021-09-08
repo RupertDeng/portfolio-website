@@ -12,18 +12,12 @@
   transition: 0.3s;
 }
 
-.project-card:hover, .project-card:focus {
-  transform: translateX(-6px) translateY(-6px);
-  box-shadow: 6px 6px 6px #aaa;
-}
-
 .project-card.focused {
   border-width: 3px;
   border-color: mediumblue;
   transform: translateX(-6px) translateY(-6px);
   box-shadow: 6px 6px 6px #aaa;
 }
-
 
 .card-image {
   box-sizing: border-box;
@@ -53,3 +47,9 @@
   background-color:gainsboro;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateX(-6px) translateY(-6px);
+    box-shadow: 6px 6px 6px #aaa;
+  }
+}
