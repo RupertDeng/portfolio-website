@@ -62,3 +62,5 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
     </nav>
   );
 });
+
+
