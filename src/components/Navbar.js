@@ -41,7 +41,7 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
     return menuList;
   };
 
-  const appLogo = '/images/logo-sketch.svg';
+  const appLogo = '/images/logo-sketch.png';
   
 
   return (
@@ -53,7 +53,7 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
         <p className='app-name'>Ruopeng's <br></br> Code Journal</p>
       </div>
       <div className='menu-container'>
-        <button className='project-nav' onClick={()=>setPjtClick(!pjtClick)} onBlur={()=>setPjtClick(false)}>Projects</button>
+        <button className='project-nav' onClick={()=>setPjtClick(!pjtClick)} onBlur={()=>setPjtClick(false)}>Project</button>
         <button className='about-nav' onClick={handleAboutClick}>About</button>
         <ul className={pjtClick ? 'project-menu active' : 'project-menu'} style={menuWidth}>
           {createProjectMenuList(projectList)}

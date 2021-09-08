@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   z-index: 999;
-  animation: onload 0.3s;
+  animation: onload 0.4s;
 }
 
 .popup-box {
@@ -28,7 +28,8 @@
   border-radius: 10px;
   padding: 15px 0;
   border: 1px solid #999;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto
 }
 
 .project-showcase {
