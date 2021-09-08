@@ -37,10 +37,10 @@
 
 @keyframes fadein {
   from {
-    opacity: 50%;
+    opacity: 0.5;
   }
 
   to {
-    opacity: 100%;
+    opacity: 1.0;
   }
 }
