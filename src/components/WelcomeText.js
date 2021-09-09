@@ -12,14 +12,14 @@ export const WelcomeText = React.memo(({resolutionTier}) => {
       startCol = 3;
       endRow = 26;
       endCol = 23;
-      textSize = 0.8;
+      textSize = 0.75;
       break;
     case 'M':
       startRow = 23;
       startCol = 7;
       endRow = 25;
       endCol = 25;
-      textSize = 1;
+      textSize = 0.95;
       break;
     case 'L':
       startRow = 23;

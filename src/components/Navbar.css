@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 4%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Nunito', Helvetica, Arial, sans-serif;
   color: white;
   font-size: 0.8rem;
 }
@@ -61,11 +61,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
   color: white;
   font-size: 0.95rem;
   width: 42%;
   height: 100%;
+  outline: none;
   border: 1px solid white;
   border-radius: 5px;
   background-color: transparent;
@@ -76,11 +77,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
   color: white;
   font-size: 0.95rem;
   width: 42%;
   height: 100%;
+  outline: none;
   border: 1px solid white;
   border-radius: 5px;
   margin-left: 2%;
@@ -94,7 +96,7 @@
 }
 
 .project-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: absolute;
   box-sizing: border-box;
@@ -105,10 +107,14 @@
   border: 1px dashed black;
   margin: 0;
   padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-menu.active {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .project-item {
@@ -118,13 +124,13 @@
   align-items: center;
   justify-content: center;
   padding: 8px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   text-decoration: none;
   color: black;
   border: none;
   background-color: transparent;
-  text-underline-offset: 0.15rem; 
+  text-underline-offset: 3px; 
 }
 
 
@@ -133,14 +139,14 @@
     background-color: white;
     color: black;
   }
+}
 
-  .about-nav:hover {
-    background-color: white;
-    color: black;
-  }
+.about-nav:hover {
+  background-color: white;
+  color: black;
+}
 
-  .project-item:hover {
-    background-color: #333333 ;
-    color: white;
-  }
+.project-item:hover {
+  background-color: #333333 ;
+  color: white;
 }

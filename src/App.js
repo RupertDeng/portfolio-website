@@ -4,45 +4,67 @@ import {About} from './components/About';
 import {Footer} from './components/Footer';
 import './App.css';
 import React, {useState, useEffect} from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 
 function App() {
 
+  // isMobile prop to idenfity mobile device and treat with diffent animation strategy
+  const isMobile = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+
+  // kick off smoothscroll to handle ios scroll behavior;
+  smoothscroll.polyfill();
+
   // useState and useEffect to update the window width upon resizing
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => {window.removeEventListener('resize', handleResize)};
-  }, [])
-
-  // definte grid layout for responsiveness
-  const defineGridLayout = (width) => {
-    let tier, size, rows, cols;
-
+  const defineResolutionTier = (width) => {
+    let tier;
     if (width <= 576) {
       tier = 'S';
+    } else if (width <= 992) {
+      tier = 'M';
+    } else {
+      tier = 'L'
+    }
+    return tier;
+  };
+
+  const [resolutionTier, setResolutionTier] = useState(defineResolutionTier(window.innerWidth));
+
+  useEffect(() => {
+    const isMobile = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    const handleResize = (e) => {
+      if (!isMobile) {
+        if (e === 'resize') {setResolutionTier(defineResolutionTier(window.innerWidth))};
+      } else {
+        if (e === 'orientationchange') {setTimeout(
+          ()=>{setResolutionTier(defineResolutionTier(window.outerWidth))}, 100)};
+      }
+    }
+    window.addEventListener('orientationchange', ()=>handleResize('orientationchange'));
+    window.addEventListener('resize', ()=>handleResize('resize'));
+    return () => {window.removeEventListener('resize', ()=>handleResize('resize')); window.removeEventListener('orientationchange', ()=>handleResize('orientationchange'))};
+  }, []);
+
+
+  // definte grid layout for responsiveness
+  const defineGridLayout = (tier) => {
+    let size, rows, cols;
+    if (tier === 'S') {
       size = 15;
       rows = 100;
       cols = 24;
-    } else if (width <= 992) {
-      tier = 'M';
+    } else if (tier === 'M') {
       size = 20;
       rows = 67;
       cols = 30;
     } else {
-      tier = 'L'
       size = 25;
       rows = 65;
       cols = 36;
     }
-
-    return [tier, rows, cols, size];
+    return [rows, cols, size];
   };
 
-  const [resolutionTier, numOfRows, numOfCols, cellSize] = defineGridLayout(windowWidth);
+  const [numOfRows, numOfCols, cellSize] = defineGridLayout(resolutionTier);
   const cellBorder = 1;
 
   // definte activeWidth and sizeUnit using the grid information for other components
@@ -51,12 +73,11 @@ function App() {
   const navHeight = sizeUnit * (resolutionTier === 'S' ? 3.5 : 2.5);
   const navWidth = activeWidth - sizeUnit;
 
-  
 
   return (
     <div className='app'>
       <NavBar resolutionTier={resolutionTier} navHeight={navHeight} navWidth={navWidth} sizeUnit={sizeUnit}/>
-      <Grid resolutionTier={resolutionTier} numOfRows={numOfRows} numOfCols={numOfCols} cellSize={cellSize} cellBorder={cellBorder} />
+      <Grid isMobile={isMobile} resolutionTier={resolutionTier} numOfRows={numOfRows} numOfCols={numOfCols} cellSize={cellSize} cellBorder={cellBorder} />
       <About resolutionTier={resolutionTier} aboutWidth={activeWidth}/>
       <Footer footerWidth={activeWidth} />
     </div>

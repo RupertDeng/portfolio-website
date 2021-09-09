@@ -39,7 +39,7 @@
   margin: 0;
   padding: 0;
   color: black;
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Nunito', Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid black;
@@ -47,9 +47,7 @@
   background-color:gainsboro;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .project-card:hover {
-    transform: translateX(-6px) translateY(-6px);
-    box-shadow: 6px 6px 6px #aaa;
-  }
+.project-card:hover {
+  transform: translateX(-6px) translateY(-6px);
+  box-shadow: 6px 6px 6px #aaa;
 }

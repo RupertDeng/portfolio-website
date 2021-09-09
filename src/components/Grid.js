@@ -6,7 +6,7 @@ import {ProjectView} from './ProjectView';
 import './Grid.css';
 
 
-export const Grid = React.memo(({resolutionTier, numOfRows, numOfCols, cellSize, cellBorder}) => {
+export const Grid = React.memo(({isMobile, resolutionTier, numOfRows, numOfCols, cellSize, cellBorder}) => {
 
   // inline style object to assign grid layout
   const gridLayout = {
@@ -15,7 +15,7 @@ export const Grid = React.memo(({resolutionTier, numOfRows, numOfCols, cellSize,
   };
 
   // function to generate the cells in grid
-  const generateCells = (tier, cellSize, cellBorder, numOfRows, numOfCols) => {
+  const generateCells = (isMobile, tier, cellSize, cellBorder, numOfRows, numOfCols) => {
     const cellList = [];
     const banner = createWelcomeBanner(tier, numOfCols);
     let type, id;
@@ -27,7 +27,7 @@ export const Grid = React.memo(({resolutionTier, numOfRows, numOfCols, cellSize,
         } else {
           type = 'cell-default';
         }
-        cellList.push((<Cell cellId={id} key={id} cellSize={cellSize} cellBorder={cellBorder} cellRow={r} cellCol={c} cellType={type} 
+        cellList.push((<Cell isMobile={isMobile} cellId={id} key={id} cellSize={cellSize} cellBorder={cellBorder} cellRow={r} cellCol={c} cellType={type} 
           numOfRows={numOfRows} numOfCols={numOfCols} />))
       }     
     }
@@ -40,7 +40,7 @@ export const Grid = React.memo(({resolutionTier, numOfRows, numOfCols, cellSize,
     <>
       <div className='grid-container'>
         <div id='grid-view' className='grid' style={gridLayout}>
-          {generateCells(resolutionTier, cellSize, cellBorder, numOfRows, numOfCols)}
+          {generateCells(isMobile, resolutionTier, cellSize, cellBorder, numOfRows, numOfCols)}
           <WelcomeText resolutionTier={resolutionTier} />
           <ProjectView resolutionTier={resolutionTier} numOfRows={numOfRows} numOfCols={numOfCols} />
         </div>

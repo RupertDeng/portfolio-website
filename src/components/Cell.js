@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cell.css';
 
-export const Cell = React.memo(({cellId, cellSize, cellBorder, cellRow, cellCol, cellType, numOfRows, numOfCols}) => {
+export const Cell = React.memo(({isMobile, cellId, cellSize, cellBorder, cellRow, cellCol, cellType, numOfRows, numOfCols}) => {
 
   // inline style object to assign individual cell position, also setup random banner cell animation upon re-rendering;
   const cellLayout = {
@@ -9,7 +9,7 @@ export const Cell = React.memo(({cellId, cellSize, cellBorder, cellRow, cellCol,
     height: cellSize,
     borderWidth: cellBorder,
     gridArea: `${cellRow} / ${cellCol} / ${cellRow+1} / ${cellCol+1}`,
-    animation: cellType === 'cell-banner' ? `${1.5 + Math.random() * 2}s steps(4, end) 0s 5 alternate none running fadein` : 'none'
+    animation: cellType === 'cell-banner' ? `${1.5 + Math.random() * 2}s steps(4, end) 0s 3 alternate none running fadein` : 'none'
   };
 
 
@@ -23,13 +23,23 @@ export const Cell = React.memo(({cellId, cellSize, cellBorder, cellRow, cellCol,
   };
 
   const handleBannerClick = () => {
-    document.getElementById('grid-view').classList.toggle('animate');
+    if (!isMobile) {
+      const grid = document.getElementById('grid-view');
+      grid.classList.add('animate');
+      setTimeout(()=>grid.classList.remove('animate'), 1000);
+    } else {
+      const banners = document.querySelectorAll('.cell-banner');
+      banners.forEach(c=>{
+        c.classList.add('shrink');
+        setTimeout(()=>c.classList.remove('shrink'), 800);
+      });
+    }
   }
 
 
   return (
     <div id={cellId} className={cellType} style={cellLayout} onClick={cellType==='cell-banner' ? handleBannerClick : null} 
-    onMouseOver={handleMouseHover} onMouseOut={handleMouseHover}> </div>
+    onMouseOver={!isMobile ? handleMouseHover : null} onMouseOut={!isMobile ? handleMouseHover : null}> </div>
   );
 
 });
