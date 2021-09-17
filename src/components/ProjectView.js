@@ -67,9 +67,9 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
       {generateProjectCards(projectList)}
       {pjtClicked !== 0 && (
         <div className='popup-container' onClick={()=>setPjtClicked(0)}>
-          <div className='popup-box' onClick={e => e.stopPropagation()}>
-            <img className='project-showcase' src={pjt.projectShowcase} alt={pjt.projectId + 'showcase'}></img>
-            <div className='project-detail'>
+          <div className='popup-box'>
+            <img className='project-showcase' src={pjt.projectShowcase} alt={pjt.projectId + 'showcase'} onClick={e => e.stopPropagation()}></img>
+            <div className='project-detail' onClick={e => e.stopPropagation()}>
               <p className='project-title'><b>{pjt.projectName}</b></p>
               <p className='project-desc'>{pjt.projectDescription}</p>
               {(pjt.projectLink !== '' || pjt.projectRepo !== '') && (
