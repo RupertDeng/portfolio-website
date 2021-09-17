@@ -37,8 +37,8 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
       top: (rect.top+rect.bottom)/2 + scrollTop - window.innerHeight/2,
       behavior: 'smooth'
     });
-    setTimeout(() => projectCard.classList.toggle('focused'), 700);
-    setTimeout(() => projectCard.classList.toggle('focused'), 1400);
+    setTimeout(() => projectCard.classList.toggle('focused'), 600);
+    setTimeout(() => projectCard.classList.toggle('focused'), 1300);
     setPjtClick(false);
   };
 

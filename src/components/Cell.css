@@ -36,7 +36,7 @@
 
 .cell-banner.shrink {
   background-color: mediumseagreen;
-  border-radius: 10px; 
+  border-radius: 100%; 
   transform: rotate(-50deg) scale(1.1, 0.38) translate(8px, 0px);
   box-shadow: -6px 0px 9px #aaa;
 }
