@@ -18,8 +18,10 @@ export const Cell = React.memo(({isMobile, cellId, cellSize, cellBorder, cellRow
   neighborCell = neighborCell.filter(e => e[0]>0 && e[0]<=numOfRows && e[1]>0 && e[1]<=numOfCols).map(e => (e[0]-1)*numOfCols + e[1]);
 
   const handleMouseHover = () => {
-    document.getElementById(cellId).classList.toggle('active-0');
-    neighborCell.forEach(e => document.getElementById(e).classList.toggle('active-1'));
+    if (!isMobile) {
+      document.getElementById(cellId).classList.toggle('active-0');
+      neighborCell.forEach(e => document.getElementById(e).classList.toggle('active-1'));
+    }
   };
 
   const handleBannerClick = () => {
@@ -36,10 +38,21 @@ export const Cell = React.memo(({isMobile, cellId, cellSize, cellBorder, cellRow
     }
   }
 
+  const handleCellClick = () => {
+    if (isMobile) {
+      document.getElementById(cellId).classList.add('active-0');
+      neighborCell.forEach(e=>document.getElementById(e).classList.add('active-1'));
+      setTimeout(()=>{
+        document.getElementById(cellId).classList.remove('active-0');
+        neighborCell.forEach(e=>document.getElementById(e).classList.remove('active-1'));
+      }, 500)
+    }
+  };
+
 
   return (
-    <div id={cellId} className={cellType} style={cellLayout} onClick={cellType==='cell-banner' ? handleBannerClick : null} 
-    onMouseOver={!isMobile ? handleMouseHover : null} onMouseOut={!isMobile ? handleMouseHover : null}> </div>
+    <div id={cellId} className={cellType} style={cellLayout} onClick={cellType==='cell-banner' ? handleBannerClick : handleCellClick} 
+    onMouseOver={handleMouseHover} onMouseOut={handleMouseHover}> </div>
   );
 
 });
