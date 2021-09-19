@@ -43,15 +43,19 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
   const [pjtClicked, setPjtClicked] = React.useState(0);
   const pjt = pjtClicked === 0 ? null : projectList[pjtClicked-1];
 
-  //disable background scroll when modal is open, not working on ios
+  //disable background scroll when modal is open, partially working on ios
   React.useEffect(() => {
+    const handleTouchMove = e => e.preventDefault();
     if (pjtClicked !== 0) {
       document.body.style.overflowY = 'hidden';
+      document.addEventListener('touchmove', handleTouchMove, {passive: false});
     } else {
       document.body.style.overflowY = 'overlay';
     }
+    return () => document.removeEventListener('touchmove', handleTouchMove);
   }, [pjtClicked]);
 
+  const modalRef = React.useRef();
 
   //function to generate project cards
   const generateProjectCards = (projectList) => {
@@ -82,7 +86,13 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
             <img className='project-showcase' src={pjt.projectShowcase} alt={pjt.projectId + 'showcase'} onClick={e => e.stopPropagation()}></img>
             <div className='project-detail' onClick={e => e.stopPropagation()}>
               <p className='project-title'><b>{pjt.projectName}</b></p>
-              <p className='project-desc'>{pjt.projectDescription}</p>
+              <p className='project-desc' ref={modalRef} onTouchMove={e=>{
+                if (modalRef.current.scrollHeight > modalRef.current.clientHeight) {
+                  e.stopPropagation();
+                } else {
+                  e.preventDefault();
+                }
+              }}>{pjt.projectDescription}</p>
               {(pjt.projectLink !== '' || pjt.projectRepo !== '') && (
               <div className='project-links'>
                 {pjt.projectLink !== '' && (<a className='pjtlink' href={pjt.projectLink} target="_blank" rel="noopener noreferrer"><u>Link to App</u></a>)}

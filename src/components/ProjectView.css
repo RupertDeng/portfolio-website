@@ -59,6 +59,7 @@
 }
 
 .project-desc {
+  -webkit-overflow-scrolling: touch;
   background-color: rgb(240, 240, 240);
   box-sizing: border-box;
   padding: 9px;

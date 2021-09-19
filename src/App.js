@@ -39,9 +39,12 @@ function App() {
           ()=>{setResolutionTier(defineResolutionTier(window.outerWidth))}, 100)};
       }
     }
-    window.addEventListener('orientationchange', ()=>handleResize('orientationchange'));
-    window.addEventListener('resize', ()=>handleResize('resize'));
-    return () => {window.removeEventListener('resize', ()=>handleResize('resize')); window.removeEventListener('orientationchange', ()=>handleResize('orientationchange'))};
+    const orientationChange = () => handleResize('orientationchange');
+    const sizeChange = () => handleResize('resize');
+
+    window.addEventListener('orientationchange', orientationChange);
+    window.addEventListener('resize', sizeChange);
+    return () => {window.removeEventListener('resize', sizeChange); window.removeEventListener('orientationchange', orientationChange)};
   }, []);
 
 
