@@ -43,14 +43,17 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
   const [pjtClicked, setPjtClicked] = React.useState(0);
   const pjt = pjtClicked === 0 ? null : projectList[pjtClicked-1];
 
+  //disable background scroll when modal is open, not working on ios
   React.useEffect(() => {
-    if (pjtClicked === 0) {
-      document.body.style.overflowY = 'overlay';
-    } else {
+    if (pjtClicked !== 0) {
       document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'overlay';
     }
   }, [pjtClicked]);
 
+
+  //function to generate project cards
   const generateProjectCards = (projectList) => {
     let projectCards = [];
     let row = startRow;
@@ -92,13 +95,4 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
       )}
     </>
   );
-
-
-
-
-
-
-
-
-
 });
