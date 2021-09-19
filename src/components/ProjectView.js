@@ -43,6 +43,14 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
   const [pjtClicked, setPjtClicked] = React.useState(0);
   const pjt = pjtClicked === 0 ? null : projectList[pjtClicked-1];
 
+  React.useEffect(() => {
+    if (pjtClicked === 0) {
+      document.body.style.overflowY = 'overlay';
+    } else {
+      document.body.style.overflowY = 'hidden';
+    }
+  }, [pjtClicked]);
+
   const generateProjectCards = (projectList) => {
     let projectCards = [];
     let row = startRow;
