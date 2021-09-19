@@ -1,4 +1,5 @@
 .cell-default {
+  user-select: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,6 +19,7 @@
 }
 
 .cell-banner {
+  user-select: none;
   margin: 0;
   padding: 0;
   will-change: opacity;
@@ -37,7 +39,7 @@
 }
 
 .cell-banner.shrink {
-  background-image: radial-gradient(rgb(97, 132, 172), mediumseagreen);
+  background-image: radial-gradient(rgb(102, 100, 237), mediumseagreen);
   border-radius: 100%; 
   box-shadow: 4px 4px 4px #aaa;
   border-color: honeydew;
