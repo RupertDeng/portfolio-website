@@ -37,7 +37,7 @@
 }
 
 .cell-banner.shrink {
-  background-image: radial-gradient(cadetblue, mediumseagreen);
+  background-image: radial-gradient(cornflowerblue, mediumseagreen);
   border-radius: 100%; 
   box-shadow: 4px 4px 4px #aaa;
   border-color: honeydew;
