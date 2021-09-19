@@ -33,7 +33,7 @@ export const Cell = React.memo(({isMobile, cellId, cellSize, cellBorder, cellRow
       const banners = document.querySelectorAll('.cell-banner');
       banners.forEach(c=>{
         c.classList.add('shrink');
-        setTimeout(()=>c.classList.remove('shrink'), 800);
+        setTimeout(()=>c.classList.remove('shrink'), 1000);
       });
     }
   }

@@ -8,11 +8,13 @@
 }
 
 .cell-default.active-0 {
-  background-color: #FBF35E;
+  border-style: dashed;
+  border-color:#333333;
 }
 
 .cell-default.active-1 {
-  background-color: #F6F5BD;
+  border-style: dashed;
+  border-color: lightslategray;
 }
 
 .cell-banner {
@@ -23,7 +25,7 @@
   border-style: solid;
   border-color: darkslategray;
   background-color: black;
-  transition: all 0.4s ease-in-out;
+  transition: border-radius 0.5s, box-shadow 0.4s;
 }
 
 .cell-banner.active-0 {
@@ -35,12 +37,11 @@
 }
 
 .cell-banner.shrink {
-  background-color: mediumseagreen;
+  background-image: radial-gradient(cadetblue, mediumseagreen);
   border-radius: 100%; 
-  transform: rotate(-50deg) scale(1.1, 0.38) translate(8px, 0px);
-  box-shadow: -6px 0px 9px #aaa;
+  box-shadow: 4px 4px 4px #aaa;
+  border-color: honeydew;
 }
-
 
 
 @keyframes fadein {
