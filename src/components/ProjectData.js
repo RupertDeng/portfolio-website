@@ -2,7 +2,7 @@ export const projectList = [
   {
     projectId: 'project-1',
     projectName: 'Responsive Portfolio Website',
-    projectCoverImage: '/images/project-images/project-1-cover.png',
+    projectCoverImage: '/images/project-images/project-1-cover.jfif',
     projectShowcase: '/images/project-images/project-1-showcase.gif',
     projectLink: '',
     projectRepo: 'https://github.com/RupertDeng/portfolio-website',

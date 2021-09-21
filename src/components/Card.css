@@ -7,25 +7,24 @@
   align-items: center;
   place-self: stretch stretch;
   background-color: rgb(255, 255, 255, 0.6);
-  border: 1px solid black;
   border-radius: 10px;
   transition: 0.3s;
+  overflow: hidden;
 }
 
 .project-card.focused {
-  border-width: 3px;
-  border-color: mediumblue;
+  border: 1px solid mediumblue;
   transform: translateX(-6px) translateY(-6px);
   box-shadow: 6px 6px 6px #aaa;
 }
 
 .card-image {
-  box-sizing: border-box;
-  margin: 5px;
   height: 82%;
   width: 100%;
+  margin: 0;
+  padding: 0;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto 100%;
   background-position: center center;
 }
 
@@ -42,9 +41,7 @@
   font-family: 'Poppins', 'Nunito', Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 0.9rem;
-  border-top: 1px solid black;
-  border-radius: 0 0 9px 9px;
-  background-color:gainsboro;
+  background-color: transparent;
 }
 
 .project-card:hover {
