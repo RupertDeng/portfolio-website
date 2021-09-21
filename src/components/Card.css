@@ -13,9 +13,8 @@
 }
 
 .project-card.focused {
-  border: 1px solid mediumblue;
-  transform: translateX(-6px) translateY(-6px);
-  box-shadow: 6px 6px 6px #aaa;
+  transform: translateX(-7px) translateY(-7px);
+  box-shadow: 7px 7px 7px rgb(0, 0, 0, 0.45);
 }
 
 .card-image {
@@ -45,6 +44,6 @@
 }
 
 .project-card:hover {
-  transform: translateX(-6px) translateY(-6px);
-  box-shadow: 6px 6px 6px #aaa;
+  transform: translateX(-5px) translateY(-5px);
+  box-shadow: 5px 5px 5px #aaa;
 }
