@@ -39,7 +39,7 @@
 .project-detail {
   box-sizing: border-box;
   width: 100%;
-  min-height: 150px;
+  min-height: 165px;
   min-width: 200px;
   display: flex;
   flex-direction: column;
@@ -105,9 +105,10 @@
   }
 }
 
-@media screen and (max-height: 435px) {
+@media screen and (max-height: 450px) {
   .popup-box {
     width: 70%;
+    max-width: 600px;
   }
 
   .project-detail {
@@ -115,7 +116,7 @@
   }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 515px) {
   .project-links {
     display: none;
   }
