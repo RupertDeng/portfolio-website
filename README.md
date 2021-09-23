@@ -8,7 +8,7 @@
    - add at top level the url of the github page: `"homepage": "http://{username}.github.io/{repo-name}"`
    - in the "scripts" property add "predeploy" and "deploy": `"predeploy": "npm run build", "deploy": "gh-pages -d build"`
 
-3) Make sure Github repository is added in git: `git remove -v`
+3) Make sure Github repository is added in git: `git remote -v`
 
 4) Deploy: `npm run deploy`
 
