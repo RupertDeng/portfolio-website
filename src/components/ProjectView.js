@@ -62,8 +62,9 @@ export const ProjectView = React.memo(({resolutionTier, numOfRows, numOfCols}) =
     let projectCards = [];
     let row = startRow;
     let col = startCol;
+    const pjtList = projectList.slice().reverse();
 
-    for (const project of projectList) {
+    for (const project of pjtList) {
       projectCards.push((<Card key={project.projectId} cardRow={row} cardCol={col} cardWidth={pjtWidth} cardHeight={pjtHeight}
         cardId={project.projectId} cardImage={project.projectCoverImage} cardLabel={project.projectName} cardClick={setPjtClicked} />));
       if (col + pjtWidth*2 + colGap <= numOfCols) {

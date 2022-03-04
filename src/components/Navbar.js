@@ -45,7 +45,9 @@ export const NavBar = React.memo(({resolutionTier, navHeight, navWidth, sizeUnit
   // generate project menu list
   const createProjectMenuList = (projectList) => {
     let menuList = [];
-    projectList.forEach(p => {
+    const pjtList = projectList.slice().reverse();
+    
+    pjtList.forEach(p => {
       menuList.push(
         (<li key={p.projectId + '-menu'} className='project-item' onMouseDown={()=>handlePjtMenuClick(p.projectId)}>
           <u>{p.projectName}</u>
