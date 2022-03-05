@@ -59,7 +59,7 @@ export const SkillView = React.memo(({resolutionTier, numOfRows, numOfCols}) => 
 
   return (
     <>
-      <div className='skill-text' style={textStyle}><i>Skills Activated</i></div>
+      <div className='skill-text' style={textStyle}><i>Skills Unlocked</i></div>
       {generateSkillIcons(SkillList)}
     </>
   );
