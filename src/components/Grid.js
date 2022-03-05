@@ -3,6 +3,7 @@ import {Cell} from './Cell';
 import {WelcomeText} from './WelcomeText';
 import {createWelcomeBanner} from './WelcomeBanner';
 import {ProjectView} from './ProjectView';
+import {SkillView} from './SkillView';
 import './Grid.css';
 
 
@@ -43,6 +44,7 @@ export const Grid = React.memo(({isMobile, resolutionTier, numOfRows, numOfCols,
           {generateCells(isMobile, resolutionTier, cellSize, cellBorder, numOfRows, numOfCols)}
           <WelcomeText resolutionTier={resolutionTier} />
           <ProjectView resolutionTier={resolutionTier} numOfRows={numOfRows} numOfCols={numOfCols} />
+          <SkillView resolutionTier={resolutionTier} numOfRows={numOfRows} numOfCols={numOfCols} />
         </div>
       </div>
     </>

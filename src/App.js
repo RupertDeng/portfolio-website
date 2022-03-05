@@ -53,15 +53,15 @@ function App() {
     let size, rows, cols;
     if (tier === 'S') {
       size = 15;
-      rows = 116;
+      rows = 132;
       cols = 24;
     } else if (tier === 'M') {
       size = 20;
-      rows = 72;
+      rows = 84;
       cols = 30;
     } else {
       size = 25;
-      rows = 55;
+      rows = 63;
       cols = 36;
     }
     return [rows, cols, size];
