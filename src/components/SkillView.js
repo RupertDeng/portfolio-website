@@ -16,7 +16,7 @@ export const SkillView = React.memo(({resolutionTier, numOfRows, numOfCols}) => 
   switch (resolutionTier) {
     case 'S':
       startRow = numOfRows - 11;
-      textSize = 0.75;
+      textSize = 0.7;
       break;
     case 'M':
       startRow = numOfRows - 11;
