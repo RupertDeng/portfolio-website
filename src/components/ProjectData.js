@@ -39,5 +39,16 @@ This time, I used the trained ML model from Mediapipe instead to get more robust
     projectDescription: `I guess everyone gets random unknown phone calls. And I seldom found useful information online when that happens to me. So why not build a website where the good people on the internet can share info to help each other? It is also a perfect project to learn all the key essentials in Full Stack Web App development. \n
 Here user can search for any phone number, and one who knows some info on the number can post messages to alert others. The messages can be up-voted or down-voted just like any internet posts. As you can see in the end of the demo above, I also implemented a simple ip-address rate-limiter so the system won't get abused too much. \n
 Technical side, user-input data are stored in MongoDB Atlas, with phone number as primary key. Frontend of the app is created with React.js, and styled in Bootstrap which gives me much better experience than vanilla CSS. Backend server is enabled by Flask in a RESTful implmentation. Both frontend and backend are auto-deployed from Github repo, onto Netlify and Heroku platforms respectively.`
+  },
+  {
+    projectId: 'project-5',
+    projectName: 'Wine Food Pairing',
+    projectCoverImage: '/images/project-images/project-5-cover.jpg',
+    projectShowcase: '/images/project-images/project-5-showcase.gif',
+    projectLink: '',
+    projectRepo: 'https://github.com/RupertDeng/wine-food-pairing',
+    projectDescription: `I love delicious foods. And what makes a good food even better is a glass of nicely paired wine. In the past, I have heard a little bit here and there about what kinds of wine pairs well with what kinds of food, but overall, it stays very much a mystery to me. So I wondered if some AI/ML model can tackle such a humanly task. Then I stumbled upon Roald Schuring's GitHub, who is both a ML data scientist and a wine enthusiast.\n
+Since it is a completely new area to me, I'd have to learn from him. So I recreated his wine-food-pairing in my own language and tools. The whole undertaking is essentially an tasty journey of Natural Language Processing. We started from raw wine and food reviews scraped online, processed them into tokenizer and phraser to standardize the words, then trained a Word2Vec model from the corpora so we can compare similarty in all taste attributes between wine and food. With Roald's knowledge in wine pairing rules, we can at last build a recommendation engine to refine the most matching wines to user-input food ingredients.\n
+During this work, long processing time on hugely-sized pandas dataframe once became a headache to me. Fortunately, the pyhton community has come up with Dask library, which can parallelizing dataframe processing with multi-core/multi-process. It has significantly reduced the wait time, almost by 8x.`
   }
 ];
